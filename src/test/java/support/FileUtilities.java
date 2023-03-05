@@ -25,9 +25,5 @@ public class FileUtilities {
         return propertyValue.toString();
     }
 
-//    public static void main(String[] args) {
-//        System.out.println(readProperty("login","app_url"));
-//        System.out.println(readProperty("login","username"));
-//        System.out.println(readProperty("contactus","contactHeading"));
-//    }
+
 }
