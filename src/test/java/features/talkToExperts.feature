@@ -1,4 +1,4 @@
-Feature: ContactUs
+Feature: Talk to experts
 
   Scenario: Verify User is able to submit the ContactUs form
     Given The user launches the application

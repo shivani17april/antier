@@ -42,11 +42,36 @@ public class ContactUsSteps extends ContactUsPage {
         enterName(driver,your_name);
     }
 
+
+
     @And("The user enters the country")
     public void userEnterTheCountry(){
         String countryName = readProperty("contactus", "countryName");
         String countryCode = readProperty("contactus", "countryCode");
         enterCountry(driver,countryCode,countryName);
     }
+
+    @And("The user enters the email")
+    public void userEmail()
+    {
+        String email =readProperty("contactus","YourEmail");
+        enterEmail(driver,email);
+    }
+    @And("The user enters the phone number")
+    public void userPhone()
+    {
+        String phone =readProperty("contactus","yourPhone");
+        enterPhone(driver,phone);
+    }
+     @And("The user enters the Message")
+    public void message()
+    {
+        String msg =readProperty("contactus","YourMessage");
+        enterMsg(driver,msg);
+    }
+
+
+
+
 
 }
