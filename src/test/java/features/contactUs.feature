@@ -9,7 +9,9 @@ Feature: ContactUs
     And   The user enters the country
     And   The user enters the phone number
     And   The user enters the Message
+    And   The user verify captcha
     And   The user submit the form data
+    And   The user redirected to the Thanks Page
 
 #    And The user enters the contact number
 #    And The user enters the contact number

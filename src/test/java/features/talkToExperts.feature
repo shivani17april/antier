@@ -9,6 +9,9 @@ Feature: Talk to experts
     And   The user enters the countrys
     And   The user enters the phone numbers
     And   The user enters the Messages
+    And   The user verify captchas
     And   The user submit the form datas
+    And   The user redirected to the Thanks Pages
+
 
 

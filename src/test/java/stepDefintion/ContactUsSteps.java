@@ -70,22 +70,24 @@ public class ContactUsSteps extends ContactUsPage {
     public void message() {
         String msg = readProperty("contactus", "YourMessage");
         enterMsg(driver, msg);
-        try {
-            Thread.sleep(60000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
+    }
+    @And("The user verify captcha")
+    public void captcha() {
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        verifyCaptcha(driver);
     }
 
     @And("The user submit the form data")
     public void Submit() {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         clickOnContactSubmit(driver);
 
-       SendEmail email=new SendEmail();
-       email.sendEmailFxn("ds","dsd");
-
+    }
+    @And("The user redirected to the Thanks Page")
+    public void Success() {
+        success(driver);
     }
 
 

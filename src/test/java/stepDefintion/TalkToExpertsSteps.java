@@ -57,14 +57,13 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
     }
 
 
-
-
     @And("The user enters the emails")
     public void userEmail() {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         String email = readProperty("talktoexperts", "YourEmail");
         enterEmail(driver, email);
     }
+
     @And("The user enters the countrys")
     public void userEnterTheCountry() {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -75,6 +74,7 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
         // driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
     }
+
     @And("The user enters the phone numbers")
     public void userPhone() {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -91,12 +91,23 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
         enterMsg(driver, msg);
     }
 
+    @And("The user verify captchas")
+    public void captcha() {
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        verifyCaptcha(driver);
+    }
+
     @And("The user submit the form datas")
     public void Submit() {
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("window.scrollBy(0,550)", "");
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         clickOnContactSubmit(driver);
+    }
+
+    @And("The user redirected to the Thanks Pages")
+    public void Success() {
+        success(driver);
     }
 
 
