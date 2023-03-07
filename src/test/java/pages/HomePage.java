@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HomePage {
     private By ContactUsLink = By.xpath("//span[text()='CONTACT US']");
+    private By TalkToExpert = By.xpath("//a[normalize-space()='Talk To Our Experts']");
 
     public WebDriver driver;
 
@@ -19,6 +20,9 @@ public class HomePage {
         return driver;
     }
 
+    public void talktoExp(WebDriver driver) {
+        driver.findElement(TalkToExpert).click();
+    }
     public void clickOnContactUsLink(WebDriver driver) {
         driver.findElement(ContactUsLink).click();
     }
