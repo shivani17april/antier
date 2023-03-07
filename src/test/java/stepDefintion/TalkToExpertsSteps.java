@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.ContactUsPage;
@@ -13,6 +14,7 @@ import pages.TalkToExpertsPage;
 import static support.FileUtilities.*;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 import static support.FileUtilities.readProperty;
 
@@ -21,13 +23,16 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
     HomePage homePage = new HomePage();
     WebDriver driver;
 
-    @Given("The user launches the application")
+    @Given("The user launches the applications")
     public void theUserLaunchesTheApplication() {
         String appURL = readProperty(PROPERTY_FILE_NAME, "app_url");
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("document.body.style.zoom='80%'");
         this.driver = homePage.launchApplication(appURL);
+
     }
 
-    @When("The user click on Talk to our experts link")
+    @When("The user click on Talk to our experts links")
     public void the_user_click_on_link() {
         homePage.talktoExp(driver);
     }
@@ -39,47 +44,59 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
 //        Assert.assertEquals(actualTitle, expectedTitle);
 //    }
 
-    @When("The user enters the name")
+    @And("The user enter the names")
     public void userEnterName() {
-        String your_name = readProperty("talktoexperts", "yourName");
-        enterName(driver, your_name);
+        try {
+            String your_name = readProperty("talktoexperts", "yourName");
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+            enterName(driver, your_name);
+        } catch (Exception e) {
+            System.out.println("TAG..." + e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 
 
-    @And("The user enters the country")
-    public void userEnterTheCountry() {
-        String countryName = readProperty("talktoexperts", "countryName");
-        String countryCode = readProperty("talktoexperts", "countryCode");
-        enterCountry(driver, countryCode, countryName);
-    }
 
-    @And("The user enters the email")
+
+    @And("The user enters the emails")
     public void userEmail() {
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         String email = readProperty("talktoexperts", "YourEmail");
         enterEmail(driver, email);
     }
+    @And("The user enters the countrys")
+    public void userEnterTheCountry() {
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        String countryName = readProperty("talktoexperts", "countryName");
+        String countryCode = readProperty("talktoexperts", "countryCode");
 
-    @And("The user enters the phone number")
+        enterCountry(driver, countryCode, countryName);
+        // driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
+    }
+    @And("The user enters the phone numbers")
     public void userPhone() {
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
         String phone = readProperty("talktoexperts", "yourPhone");
         enterPhone(driver, phone);
     }
 
-    @And("The user enters the Message")
+    @And("The user enters the Messages")
     public void message() {
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
         String msg = readProperty("talktoexperts", "YourMessage");
         enterMsg(driver, msg);
     }
 
-    @And("The user submit the form data")
+    @And("The user submit the form datas")
     public void Submit() {
-        try {
-            Thread.sleep(600000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,550)", "");
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         clickOnContactSubmit(driver);
-
     }
 
 

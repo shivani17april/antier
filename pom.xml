@@ -44,6 +44,7 @@
             <version>4.8.1</version>
         </dependency>
 
+
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -59,6 +60,17 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-bom</artifactId>
             <version>4.8.1</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>jakarta.mail</groupId>-->
+<!--            <artifactId>jakarta.mail-api</artifactId>-->
+<!--            <version>2.1.0</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>jakarta.mail</artifactId>
+            <version>2.0.1</version>
         </dependency>
 
     </dependencies>

@@ -8,10 +8,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.ContactUsPage;
 import pages.HomePage;
+import sendEmail.SendEmail;
 
 import static support.FileUtilities.*;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 import static support.FileUtilities.readProperty;
 
@@ -68,11 +70,21 @@ public class ContactUsSteps extends ContactUsPage {
     public void message() {
         String msg = readProperty("contactus", "YourMessage");
         enterMsg(driver, msg);
+        try {
+            Thread.sleep(60000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @And("The user submit the form data")
     public void Submit() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         clickOnContactSubmit(driver);
+
+       SendEmail email=new SendEmail();
+       email.sendEmailFxn("ds","dsd");
 
     }
 
