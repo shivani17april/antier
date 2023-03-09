@@ -11,11 +11,12 @@ import jakarta.mail.internet.MimeMultipart;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.util.Map;
 import java.util.Properties;
 
 public class SendEmail {
-
-
+//    export SECRET_KEY="hip-hip-env-files"
+//    export VERSION="1.0"
     @Parameters({"sub", "message"})
     @Test
     public void sendEmailFxn(String sub, String message) {
@@ -26,7 +27,7 @@ public class SendEmail {
 //        String message = msg;
 //        String sub = subMsg;
         String from = "shivani.sharma@antiersolutions.com";
-        String to = "priya.sharma@antiersolutions.com";
+        String to = "mohammad.shaiyad@antiersolutions.com";
 
         //sendEmail(message, sub, to, from);
 
@@ -118,10 +119,14 @@ public class SendEmail {
     }
 
     void sendMail(String sub, String msg) {
+
+        Map<String, String> env = System.getenv();
+
+        System.out.print("TAG user"+env.get("USER"));
         //provide Mailtrap's username
-        final String username = "apikey";
+        final String username = env.get("USER");
+        final String password = env.get("PASS");
         //provide Mailtrap's password
-        final String password = "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";
         //provide Mailtrap's host address
         String host = "smtp.sendgrid.net";
         //configure Mailtrap's SMTP server details

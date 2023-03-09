@@ -25,5 +25,4 @@ public class FileUtilities {
         return propertyValue.toString();
     }
 
-
 }

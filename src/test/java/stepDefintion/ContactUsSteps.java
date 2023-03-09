@@ -8,17 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.ContactUsPage;
 import pages.HomePage;
-import sendEmail.SendEmail;
 
-import static support.FileUtilities.*;
-
-import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import static support.FileUtilities.readProperty;
 
-public class ContactUsSteps extends ContactUsPage {
+public class ContactUsSteps extends ContactUsPage  {
     String PROPERTY_FILE_NAME = "config";
+
     HomePage homePage = new HomePage();
     WebDriver driver;
 
@@ -26,6 +23,7 @@ public class ContactUsSteps extends ContactUsPage {
     public void theUserLaunchesTheApplication() {
         String appURL = readProperty(PROPERTY_FILE_NAME, "app_url");
         this.driver = homePage.launchApplication(appURL);
+
     }
 
     @When("The user click on Contact Us link")
@@ -36,6 +34,7 @@ public class ContactUsSteps extends ContactUsPage {
     @Then("The user should be redirected to the contact us Page")
     public void userNavigatesToContactusPage() {
         String expectedTitle = readProperty("contactus", "contactUsPageTitle");
+
         String actualTitle = isContactUsTitleAvailable(driver);
         Assert.assertEquals(actualTitle, expectedTitle);
     }

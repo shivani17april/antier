@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class TalkToExpertsPage extends Utility {
-    By nameField = By.name("text-800");
+    By nameField = By.xpath("//*[@id=\"wpcf7-f1917-o1\"]/form/div[2]/div[1]/div/p/span/input");
     By emailField = By.name("email-65");
     //By phoneField = By.name("tel-147");
     By phoneField = By.xpath("//input[@placeholder='Phone Number*']");
@@ -45,7 +45,7 @@ public class TalkToExpertsPage extends Utility {
 
     public void verifyCaptcha(WebDriver driver) {
         By captcha = By.xpath("//*[@id=\"wpcf7-f1917-o1\"]/form/div[2]/div[6]/p/span/span/span[1]/span/span");
-        By selectedCaptcha = By.xpath("//*[@id=\"wpcf7-f1917-o1\"]/form/div[2]/div[6]/p/span/span/span[1]/label[3]");
+        By selectedCaptcha = By.xpath("//*[@id=\"wpcf7-f1917-o1\"]/form/div[2]/div[6]/p/span/span/span[1]/label[2]");
         //*[@id="wpcf7-f1917-o1"]/form/div[2]/div[3]/div/p/span/div/div
 
         String sCaptcha = driver.findElement(captcha).getText();
@@ -105,9 +105,8 @@ public class TalkToExpertsPage extends Utility {
         try {
             if (Objects.equals(driver.getTitle(), "Thanks - Antier Solutions")) {
                 SendEmail email = new SendEmail();
-                email.sendEmailFxn("hellos", "https://www.antiersolutions.com/thanks/");
+                email.sendEmailFxn("Talk to expert", "https://www.antiersolutions.com/thanks/");
             }
-
         } catch (Exception e) {
             System.out.println("TAG" + e.getMessage());
         }
