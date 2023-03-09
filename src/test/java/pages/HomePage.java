@@ -22,6 +22,9 @@ public class HomePage {
         WebDriverManager.chromedriver().setup();
         driver =  new ChromeDriver();
         driver.get(appURL);
+
+        //
+        //
 //        JavascriptExecutor executor = (JavascriptExecutor)driver;
 //        executor.executeScript("document.body.style.zoom = '0.8'");
         driver.manage().window().maximize();
