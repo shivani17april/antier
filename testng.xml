@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/user/IdeaProjects/Shivani_Project_BDD">
+        <parameter name="subject" value="sub"></parameter>
+        <parameter name="message" value="msg"></parameter>
+        <classes>
+            <class name="SampleTestNGClass">
+            </class>
+        </classes>
+    </test>
+</suite>
