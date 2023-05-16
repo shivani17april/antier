@@ -10,7 +10,13 @@ public class FileUtilities {
     public static String readProperty(String propertyFileName, String propertyKey) {
         FileInputStream fileinputStream;
         Properties property = null;
-        String propertyFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\test_data\\"+propertyFileName+
+
+//        String propertyFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\test_data\\"
+//                +propertyFileName+
+//                ".properties";
+        ///Users/user/Desktop/QA/antier/src/test/resources/test_data/config.properties
+        String propertyFilePath = System.getProperty("webdriver.gecko.driver",System.getProperty("user.dir"))+"\\src\\test\\resources\\test_data\\"
+                +propertyFileName+
                 ".properties";
         try {
             fileinputStream = new FileInputStream(propertyFilePath);
