@@ -13,9 +13,9 @@ public class HomePage {
 
     public WebDriver driver;
 
-    public WebDriver launchApplication(String appURL){
+    public WebDriver launchApplication(String appURL) {
         WebDriverManager.chromedriver().setup();
-        driver =  new ChromeDriver();
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get(appURL);
         return driver;
@@ -24,6 +24,7 @@ public class HomePage {
     public void talktoExp(WebDriver driver) {
         driver.findElement(TalkToExpert).click();
     }
+
     public void clickOnContactUsLink(WebDriver driver) {
         driver.findElement(ContactUsLink).click();
     }

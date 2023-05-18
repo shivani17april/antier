@@ -10,6 +10,7 @@ import org.testng.Assert;
 import pages.ContactUsPage;
 import pages.HomePage;
 import pages.TalkToExpertsPage;
+import util.Const;
 
 import static support.FileUtilities.*;
 
@@ -25,7 +26,7 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
 
     @Given("The user launches the applications")
     public void theUserLaunchesTheApplication() {
-        String appURL = readProperty(PROPERTY_FILE_NAME, "app_url");
+        String appURL = Const.Config.app_url;// readProperty(PROPERTY_FILE_NAME, "app_url");
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("document.body.style.zoom='80%'");
         this.driver = homePage.launchApplication(appURL);
@@ -47,7 +48,7 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
     @And("The user enter the names")
     public void userEnterName() {
         try {
-            String your_name = readProperty("talktoexperts", "yourName");
+            String your_name =  Const.TalkToExpert.yourName;//readProperty("talktoexperts", "yourName");
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             enterName(driver, your_name);
         } catch (Exception e) {
@@ -60,15 +61,15 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
     @And("The user enters the emails")
     public void userEmail() {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        String email = readProperty("talktoexperts", "YourEmail");
+        String email =Const.TalkToExpert.YourEmail;// readProperty("talktoexperts", "YourEmail");
         enterEmail(driver, email);
     }
 
     @And("The user enters the countrys")
     public void userEnterTheCountry() {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        String countryName = readProperty("talktoexperts", "countryName");
-        String countryCode = readProperty("talktoexperts", "countryCode");
+        String countryName = Const.TalkToExpert.countryName;//readProperty("talktoexperts", "countryName");
+        String countryCode = Const.TalkToExpert.countryCode;//readProperty("talktoexperts", "countryCode");
 
         enterCountry(driver, countryCode, countryName);
         // driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -79,7 +80,7 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
     public void userPhone() {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
-        String phone = readProperty("talktoexperts", "yourPhone");
+        String phone = Const.TalkToExpert.yourPhone;//readProperty("talktoexperts", "yourPhone");
         enterPhone(driver, phone);
     }
 
@@ -87,7 +88,7 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
     public void message() {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
-        String msg = readProperty("talktoexperts", "YourMessage");
+        String msg =Const.TalkToExpert.YourMessage;// readProperty("talktoexperts", "YourMessage");
         enterMsg(driver, msg);
     }
 
