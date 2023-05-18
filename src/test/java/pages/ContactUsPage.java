@@ -63,7 +63,6 @@ public class ContactUsPage {
         try {
             if (Objects.equals(driver.getTitle(), "Thanks - Antier Solutions")) {
 
-
                     SendEmail email = new SendEmail();
                     email.sendEmailFxn("hellos", "https://www.antiersolutions.com/thanks/");
 

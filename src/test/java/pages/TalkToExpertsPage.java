@@ -12,16 +12,19 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class TalkToExpertsPage extends Utility {
-    By nameField = By.name("text-800");
-    By emailField = By.name("email-65");
+//    By nameField = By.name("text-800");
+    By nameField = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[2]/p/span/input");
+    By emailField = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[3]/p/span/input");
     //By phoneField = By.name("tel-147");
-    By phoneField = By.xpath("//input[@placeholder='Phone Number*']");
-    By msgField = By.name("textarea-662");
+    By phoneField = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[5]/p/span/input");
+    By msgField = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[6]/p/span/textarea");
     //    By sub = By.xpath("//div[@class='f-block rg']//input[@value='Submit']");
 //    By sub = By.className("wpcf7-form-control has-spinner wpcf7-submit");
 
-    By sub = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[7]/div[1]/p[1]/input[1]");
-    By countryIcon = By.xpath("//*[@id=\"wpcf7-f1917-o1\"]/form/div[2]/div[3]/div/p/span/div/div");
+//    By sub = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[7]/div[1]/p[1]/input[1]");
+    By sub = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[8]/p/input");
+//    By countryIcon = By.xpath("//*[@id=\"wpcf7-f1917-o1\"]/form/div[2]/div[3]/div/p/span/div/div");
+    By countryIcon = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[4]/p/span/div/div");
 
 //    public String isContactUsTitleAvailable(WebDriver driver) {
 //        return driver.getTitle();
@@ -44,18 +47,22 @@ public class TalkToExpertsPage extends Utility {
     }
 
     public void verifyCaptcha(WebDriver driver) {
-        By captcha = By.xpath("//*[@id=\"wpcf7-f1917-o1\"]/form/div[2]/div[6]/p/span/span/span[1]/span/span");
-        By selectedCaptcha = By.xpath("//*[@id=\"wpcf7-f1917-o1\"]/form/div[2]/div[6]/p/span/span/span[1]/label[3]");
+        By captcha = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[7]/p/span/span/span[1]/span/span");
+
+        By selectedCaptcha1 = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[7]/p/span/span/span[1]/label[2]");
+//        By selectedCaptcha = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[7]/p/span/span/span[1]/label[2]/svg/path");
         //*[@id="wpcf7-f1917-o1"]/form/div[2]/div[3]/div/p/span/div/div
 
         String sCaptcha = driver.findElement(captcha).getText();
-        String lastWord = sCaptcha.substring(sCaptcha.lastIndexOf(" ") + 1);
+       String lastWord = sCaptcha.substring(sCaptcha.lastIndexOf(" ") + 1);
         System.out.println("TAG :" + sCaptcha);
         System.out.println("TAG: " + lastWord);
         try {
-            driver.findElement(selectedCaptcha).click();
+            driver.findElement(selectedCaptcha1).click();
+
         } catch (Exception e) {
-            System.out.println("TAG...." + e.getMessage());
+
+
             throw new RuntimeException(e);
         }
     }
@@ -72,7 +79,7 @@ public class TalkToExpertsPage extends Utility {
 //                + country_name + "')]");
 
         try {
-            By countryName = By.xpath("(//span[@class='country-name'])[402]");
+            By countryName = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[4]/p/span/div/div/ul/li[102]");
             driver.findElement(countryName).click();
         } catch (Exception e) {
             System.out.println("TAG...." + e.getMessage());
