@@ -49,7 +49,8 @@ public class TalkToExpertsPage extends Utility {
     public void verifyCaptcha(WebDriver driver) {
         By captcha = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[7]/p/span/span/span[1]/span/span");
 
-        By selectedCaptcha1 = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[7]/p/span/span/span[1]/label[2]");
+        By selectedCaptcha1 = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[7]/p/span/span/span[1]/label[3]");
+//        By selectedCaptcha1 = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[7]/p/span/span/span[1]/label[1]/svg/path");
 //        By selectedCaptcha = By.xpath("//*[@id=\"wpcf7-f2117-p122-o4\"]/form/div[7]/p/span/span/span[1]/label[2]/svg/path");
         //*[@id="wpcf7-f1917-o1"]/form/div[2]/div[3]/div/p/span/div/div
 

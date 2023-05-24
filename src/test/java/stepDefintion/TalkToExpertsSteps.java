@@ -10,6 +10,7 @@ import org.testng.Assert;
 import pages.ContactUsPage;
 import pages.HomePage;
 import pages.TalkToExpertsPage;
+import sendEmail.SendEmail;
 
 import static support.FileUtilities.*;
 
@@ -34,7 +35,7 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
 
     @When("The user click on Talk to our experts links")
     public void the_user_click_on_link() {
-        homePage.talktoExp(driver);
+      homePage.talktoExp(driver);
     }
 
 //    @Then("The user should be redirected to the Talk to expert Pages")

@@ -42,7 +42,7 @@ public class ContactUsPage {
         driver.findElement(msgField).sendKeys(msg);
     }
     public void verifyCaptcha(WebDriver driver) {
-        By selectedCaptcha = By.xpath("//*[@id=\"wpcf7-f2117-p122-o3\"]/form/div[7]/p/span/span/span[1]/label[1]");
+        By selectedCaptcha = By.xpath("//*[@id=\"wpcf7-f2117-p122-o3\"]/form/div[7]/p/span/span/span[1]/label[3]");
         try {
             driver.findElement(selectedCaptcha).click();
         } catch (Exception e) {
