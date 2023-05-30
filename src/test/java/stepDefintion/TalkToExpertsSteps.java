@@ -38,13 +38,16 @@ public class TalkToExpertsSteps extends TalkToExpertsPage {
       homePage.talktoExp(driver);
     }
 
-//    @Then("The user should be redirected to the Talk to expert Pages")
-//    public void userNavigatesToContactusPage() {
+    @Then("The user should be redirected to the Talk to expert Pages")
+    public void userNavigatesToContactusPage() {
 //        String expectedTitle = readProperty("talktoexperts", "TalktoexpertPage");
-//        String actualTitle = isContactUsTitleAvailable(driver);
-//        Assert.assertEquals(actualTitle, expectedTitle);
-//    }
-
+        String expectedTitle = readProperty("contactus", "contactUsPageTitle");
+        String actualTitle = isContactUsTitleAvailable(driver);
+        Assert.assertEquals(actualTitle, expectedTitle);
+    }
+    public String isContactUsTitleAvailable(WebDriver driver) {
+        return driver.getTitle();
+    }
     @And("The user enter the names")
     public void userEnterName() {
         try {

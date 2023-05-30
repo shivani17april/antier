@@ -113,11 +113,13 @@ public class TalkToExpertsPage extends Utility {
         try {
             if (Objects.equals(driver.getTitle(), "Thanks - Antier Solutions")) {
                 SendEmail email = new SendEmail();
-                email.sendEmailFxn("hellos", "https://www.antiersolutions.com/thanks/");
+                email.sendEmailFxn("Contact Us", "This form is working fine!");
             }
 
         } catch (Exception e) {
             System.out.println("TAG" + e.getMessage());
+          //  SendEmail email = new SendEmail();
+           // email.sendEmailFxn("Contact Us", "This form is not working!");
         }
     }
 }

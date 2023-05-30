@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="src/test/java/features/talkToExperts.feature",
                  glue="stepDefintion",
-                 dryRun = false
+                 dryRun = true
 )
 public class TestRunnerClass extends AbstractTestNGCucumberTests {
 
