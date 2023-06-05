@@ -1,4 +1,3 @@
-testRunner\TestRunnerClass.class
-stepDefintion\LoginSteps.class
 support\FileUtilities.class
+testRunner\TestRunnerClass.class
 stepDefintion\HomeSteps.class

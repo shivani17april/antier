@@ -1,4 +1,10 @@
-E:\students_data\Shivani_Selenium\Shivani_Project_BDD\src\test\java\stepDefintion\LoginSteps.java
-E:\students_data\Shivani_Selenium\Shivani_Project_BDD\src\test\java\support\FileUtilities.java
-E:\students_data\Shivani_Selenium\Shivani_Project_BDD\src\test\java\testRunner\TestRunnerClass.java
-E:\students_data\Shivani_Selenium\Shivani_Project_BDD\src\test\java\stepDefintion\HomeSteps.java
+C:\Users\user\IdeaProjects\Shivani_Project_BDD\src\test\java\pages\TalkToExpertsPage.java
+C:\Users\user\IdeaProjects\Shivani_Project_BDD\src\test\java\pages\ContactUsPage.java
+C:\Users\user\IdeaProjects\Shivani_Project_BDD\src\test\java\stepDefintion\TalkToExpertsSteps.java
+C:\Users\user\IdeaProjects\Shivani_Project_BDD\src\test\java\util\Utility.java
+C:\Users\user\IdeaProjects\Shivani_Project_BDD\src\test\java\stepDefintion\ContactUsSteps.java
+C:\Users\user\IdeaProjects\Shivani_Project_BDD\src\test\java\pages\HomePage.java
+C:\Users\user\IdeaProjects\Shivani_Project_BDD\src\test\java\stepDefintion\HomeSteps.java
+C:\Users\user\IdeaProjects\Shivani_Project_BDD\src\test\java\sendEmail\SendEmail.java
+C:\Users\user\IdeaProjects\Shivani_Project_BDD\src\test\java\support\FileUtilities.java
+C:\Users\user\IdeaProjects\Shivani_Project_BDD\src\test\java\testRunner\TestRunnerClass.java
